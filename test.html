@@ -14,7 +14,7 @@
     // Function to make a request to the API endpoint
     async function fetchData() {
       try {
-        const response = await fetch('http://52.91.22.169/api/resource');
+        const response = await fetch('http://52.91.22.169:4000/api/resource');
         const data = await response.json();
 
         // Display the API response on the page
