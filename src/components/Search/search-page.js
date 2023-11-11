@@ -26,7 +26,7 @@ function Search() {
       });
 
     // Setup WebSocket connection
-    const nativeWebSocket = new WebSocket("ws://127.0.0.1:4000");
+    const nativeWebSocket = new WebSocket("http://54.146.242.149/:4000");
     setWs(nativeWebSocket);
 
     nativeWebSocket.onopen = () => {
