@@ -1,8 +1,8 @@
+import axios from 'axios';
 import React from 'react';
 
 function Test() {
   const runScript = () => {
-    const axios = require('axios');
     const url = 'https://muka4hp71i.execute-api.us-east-1.amazonaws.com/test';
     const data = {
   "name": "ECC",
