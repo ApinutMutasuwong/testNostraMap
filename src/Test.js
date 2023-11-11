@@ -3,7 +3,7 @@ import React from 'react';
 function Test() {
   const runScript = () => {
     const WebSocket = require('ws');
-
+    console.log("Marai")
     // Replace 'your-ec2-public-ip' with the actual public IP or DNS of your EC2 instance
     const serverAddress = 'ws://3.94.102.73:4000';
 
