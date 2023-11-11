@@ -1,23 +1,11 @@
-// const express = require('express');
-// const app = express();
-// const path = require('path');
-
-// app.use(express.static(__dirname)); // Serve files from the current directory
-
-// app.get('/', (req, res) => {
-//   res.sendFile(path.join(__dirname, 'show_pin_location.html')); // Replace 'test.html' with your HTML file's name
-// });
-
-// app.listen(4000, () => {
-//   console.log('Server is running on port 4000');
-// });
-
-const express = require('express');
+/const express = require('express');
 const http = require('http');
 const WebSocket = require('ws');
+const cors = require('cors');
 
 
 const app = express();
+app.use(cors());
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
@@ -53,3 +41,4 @@ app.get('/', (req, res) => {
 server.listen(4000, () => {
   console.log('Server is running on port 4000');
 });
+
