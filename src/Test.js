@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
+
 function Test() {
+  // Move useState outside the runScript function
+  const [ws, setWs] = useState(null);
+
   const runScript = () => {
-    console.log("start")
+    console.log("start");
+
     // Create a new WebSocket connection
     const nativeWebSocket = new WebSocket("wss://127.0.0.1:4000");
     setWs(nativeWebSocket);
@@ -26,9 +31,6 @@ function Test() {
     return () => {
       nativeWebSocket.close();
     };
-
-
-    console.log("end")
   };
 
   return (
