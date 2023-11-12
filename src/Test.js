@@ -8,7 +8,7 @@ function Test() {
     console.log("start");
 
     // Create a new WebSocket connection
-    const nativeWebSocket = new WebSocket("ws://127.0.0.1:4000");
+    const nativeWebSocket = new WebSocket("ws://35.153.142.248:4000");
     setWs(nativeWebSocket);
 
     nativeWebSocket.onopen = () => {
