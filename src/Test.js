@@ -27,7 +27,12 @@ function Test() {
       console.error('WebSocket Error:', event);
       console.log('Ready state:', socket.readyState);
       console.log('Buffered amount:', socket.bufferedAmount);
+      // Add additional information if available
+      if (event.message) {
+        console.error('Error message:', event.message);
+      }
     });
+
 
 
     // Send a message to the server
