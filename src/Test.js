@@ -7,24 +7,27 @@ function Test() {
   const runScript = () => {
     console.log("start");
 
-    // Create a new WebSocket connection
-    const nativeWebSocket = new WebSocket("ws://100.24.10.175:4000");
-    setWs(nativeWebSocket);
+    const apiURL = 'http://100.24.10.175:4000';
 
-    nativeWebSocket.onopen = () => {
-      console.log("WebSocket connection established on search file");
-    };
+    // Replace the placeholder values with your actual API details
+    
+    fetch(apiURL)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('API Response:', data);
+        // Handle the response data as needed
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        // Handle errors appropriately
+      });
 
-    nativeWebSocket.onmessage = (event) => {
-      const data = event.data;
-      console.log(`Received WebSocket data: ${data}`);
-      // Handle data received from the server (e.g., map updates)
-    };
-
-    nativeWebSocket.onclose = () => {
-      console.log("WebSocket connection closed on search file");
-    };
-
+    
     console.log("end");
 
     // Clean up the WebSocket connection when the component unmounts
